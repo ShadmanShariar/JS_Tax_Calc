@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crowns Heaven by Tashfia</title>
+</head>
+<body style="background-color: antiquewhite; margin-top: 3%;" align="center">
+<h1>Crowns Heaven by Tashfia</h1>   
+<div>
+<h3>Enter Dollar Rate Here</h6> 
+<input style="height: 25px; border: 2px solid red;" type="text" id="dr">
+<h3>Enter Amount in Dollar</h6> 
+<input style="height: 25px; border: 2px solid red;" type="text" id="td">
+<h3>Enter Tax Percentage</h6> 
+<input style="height: 25px; border: 2px solid red;" type="text" id="tx">
+<br><input onclick="calc()" style="font-weight: bold; background-color: white; color: red; margin-left: 8%; margin-top: 2%; margin-bottom: 0%;"type="submit">
+</div>
+<h2>Total Bill in BDT</h2>
+<div style="font-size: 25px;" id="content">
+</div>
+<script>
+function calc (){
+let a = document.getElementById("dr").value;
+let b = document.getElementById("td").value;
+let c = document.getElementById("tx").value;
+let dol = a*b;
+let m = (dol/100);
+let ans = dol+(m*c);
+if(c+"".length==0){
+    c = 0.0;
+}
+if(a+"".length==0 || b+"".length==0){
+    alert("Please Fill All Boxes");
+}
+document.getElementById("content").innerHTML = Number(ans).toFixed(2)+" Taka";
+
+}
+</script>
+</body>
+</html>
